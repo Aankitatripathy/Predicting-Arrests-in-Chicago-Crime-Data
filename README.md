@@ -12,17 +12,17 @@ Machine Learning Models Applied:
 1. Logistic Regression (Baseline model)
 2. Random Forest (Improved accuracy and feature importance)
 3. Neural Networks (Best performance with 79% accuracy)
-4. 
+
 Key Insights:
-Crime type, location, and domestic cases play a major role in predicting arrests.
-Neural Networks outperformed other models due to their ability to detect complex patterns.
-Data balancing techniques improved model performance by handling arrest class imbalance.
+1. Crime type, location, and domestic cases play a major role in predicting arrests.
+2. Neural Networks outperformed other models due to their ability to detect complex patterns.
+3. Data balancing techniques improved model performance by handling arrest class imbalance.
 
 Impact:
 1. Helps law enforcement allocate resources efficiently.
 2. Supports data-driven decision-making for crime prevention.
 3. Enhances public safety by predicting high-risk situations.
-4. 
+   
 This project highlights how AI and predictive analytics can improve policing strategies and community safety.
 
 ![image](https://github.com/user-attachments/assets/ddc7329b-8d5d-4484-aa3a-c984355f3a1c)
