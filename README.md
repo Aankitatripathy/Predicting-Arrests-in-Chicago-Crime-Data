@@ -75,3 +75,4 @@ Predictive models should support — not replace — human judgment in law enfor
 License
 This project is licensed under the MIT License.
 
+<img width="451" height="688" alt="image" src="https://github.com/user-attachments/assets/4eab47c9-a768-47bc-81cb-e75d981f7f73" />
