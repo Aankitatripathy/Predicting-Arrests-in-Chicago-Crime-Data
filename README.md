@@ -1,28 +1,77 @@
-Crime prediction and prevention are critical for ensuring public safety and effective police administration. Chicago, one of the largest cities in the United States, these challenges are particularly complex due to the city’s diverse socio-economic landscape and varying crime rates across neighbourhood. By leveraging historical crime data, it becomes possible to predict certain outcomes, such as the likelihood of arrests in reported crime incidents. This capability is invaluable for enhancing policing strategies and shaping policies. Analysing and predicting arrests based on historical crime records from Chicago data that includes details such as crime type, location,date, time, and arrest status can be effectively approached using advanced statistical and machine learning methods. These techniques help uncover patterns and identify significant factors influencing arrests.
+Project Overview
+Chicago is one of the most densely populated cities in the U.S., with a complex socio-economic landscape that makes crime prevention especially challenging. This project leverages historical crime records from the Chicago Data Portal to build predictive models that classify whether a given incident will result in an arrest (True / False).
+By identifying key patterns — such as crime type, location, time of occurrence, and community area — the models provide actionable insights for smarter law enforcement resource allocation.
+Academic Context
+Program: MS in Artificial Intelligence & Business Analytics
+Institution: University of South Florida
+Problem Statement
+Law enforcement agencies manage enormous volumes of crime data with constrained resources. Accurately predicting arrest likelihood based on incident characteristics enables:
+•	Better prioritization of cases
+•	Smarter deployment of officers to high-risk locations and times
+•	Data-driven policy decisions that support community safety
+Target Variable: Arrest — binary classification (True = arrest made, False = no arrest)
+Data Sources
+Dataset	Source
+Crimes 2001 to Present	Chicago Data Portal
 
-The target variable in this project utilizes the "Arrest" field to identify whether an arrest could be made for a given crime using the method of supervised learning. This objective is achieved by the use of models such as Logistic Regression, Random Forest, and Neural Networks, whose performances are evaluated on metrics such as accuracy, precision, recall, and F1-score. 
+Community Area Boundaries	Chicago Data Portal – Community Areas
 
-Objective:
-Predict whether an arrest will occur for a reported crime in Chicago using machine learning.
+Dataset Summary
+•	~220,000+ crime records
+•	22 features including crime type, location, timestamp, district, community area, and arrest status
+•	Target variable: Arrest (binary)
+Methodology
+1. Exploratory Data Analysis (EDA)
+•	Theft and Battery were the most frequently reported crime types
+•	Domestic-related crimes showed a significantly higher arrest rate
+•	Certain community areas were identified as consistent crime and arrest hotspots
+•	Arrest rates showed year-over-year variation, potentially reflecting shifts in policing strategies
+2. Data Preprocessing
+•	Removed rows with missing values (< 1% of data)
+•	Addressed severe class imbalance (~80% non-arrest vs ~20% arrest) using oversampling
+•	Applied one-hot encoding to categorical features (Primary Type, Location Description)
+•	Applied Min-Max scaling to numerical features (Community Area, Year)
+•	Used a stratified 80/20 train-test split
+3. Models Trained
+•	Logistic Regression — interpretable baseline model
+•	Random Forest — ensemble approach for handling non-linear feature interactions
+•	Neural Network (MLP Classifier) — deep model for capturing complex patterns
+Results
+Model	Accuracy	Precision	Recall	F1-Score	ROC-AUC
+Logistic Regression	0.75	0.74	0.76	0.75	0.84
+Random Forest	0.74	0.72	0.78	0.75	0.83
+Neural Network (MLP)	0.79	0.80	0.76	0.78	0.88
+Best Model: Neural Network (MLP)
+The Neural Network outperformed other models with the highest accuracy (79%), precision (0.80), F1-score (0.78), and ROC-AUC (0.88). Its ability to model complex, non-linear relationships made it the most robust choice for this high-dimensional dataset.
+Getting Started
+Prerequisites
+bash
+pip install numpy pandas scikit-learn matplotlib seaborn jupyter
+Run the Notebook
+bash
+# Clone the repository
+git clone https://github.com/your-username/chicago-crime-arrest-prediction.git
+cd chicago-crime-arrest-prediction
 
-Data Used: 
-Chicago crime data, including details like crime type, location, time, and domestic involvement.
+# Launch Jupyter
+jupyter notebook notebooks/Final_ML_Project.ipynb
+Repository Structure
+chicago-crime-arrest-prediction/
+│
+├── notebooks/
+│   └── Final_ML_Project.ipynb       # Full ML pipeline: EDA → preprocessing → modeling → evaluation
+│
+├── docs/
+│   ├── ML_Documentation.pdf         # Detailed project write-up and methodology
+│   └── Chicago-Crime-PROJECT.pptx   # Presentation deck
+│
+└── README.md
+Ethical Considerations
+This project is built on historical arrest data, which may carry systemic biases related to over-policing in certain communities or uneven reporting practices. Any attempt to deploy this model in a real-world context should include:
+•	Fairness audits across demographic and geographic subgroups
+•	Bias assessments to flag disparate impact
+•	Stakeholder review involving community representatives and legal experts
+Predictive models should support — not replace — human judgment in law enforcement contexts.
+License
+This project is licensed under the MIT License.
 
-Machine Learning Models Applied:
-1. Logistic Regression (Baseline model)
-2. Random Forest (Improved accuracy and feature importance)
-3. Neural Networks (Best performance with 79% accuracy)
-
-Key Insights:
-1. Crime type, location, and domestic cases play a major role in predicting arrests.
-2. Neural Networks outperformed other models due to their ability to detect complex patterns.
-3. Data balancing techniques improved model performance by handling arrest class imbalance.
-
-Impact:
-1. Helps law enforcement allocate resources efficiently.
-2. Supports data-driven decision-making for crime prevention.
-3. Enhances public safety by predicting high-risk situations.
-   
-This project highlights how AI and predictive analytics can improve policing strategies and community safety.
-
-![image](https://github.com/user-attachments/assets/ddc7329b-8d5d-4484-aa3a-c984355f3a1c)
