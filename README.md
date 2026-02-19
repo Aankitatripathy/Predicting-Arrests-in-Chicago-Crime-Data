@@ -65,15 +65,17 @@ The Neural Network delivered the best overall performance with the highest accur
 
 ## 🚀 Getting Started
 
-### Prerequisites
+## 🚀 Run the Notebook
 ```bash
-pip install numpy pandas scikit-learn matplotlib seaborn jupyter
 # Clone the repository
 git clone https://github.com/your-username/chicago-crime-arrest-prediction.git
 cd chicago-crime-arrest-prediction
 
 # Launch Jupyter
 jupyter notebook notebooks/Final_ML_Project.ipynb
+
+
+Repository Structure
 chicago-crime-arrest-prediction/
 │
 ├── notebooks/
@@ -84,14 +86,19 @@ chicago-crime-arrest-prediction/
 │   └── Chicago-Crime-PROJECT.pptx   # Presentation deck
 │
 └── README.md
-## ⚠️ Ethical Considerations
+
+⚠️ Ethical Considerations
+
 This project is built on historical arrest data, which may carry systemic biases related to over-policing in certain communities or uneven reporting practices. Any attempt to deploy this model in a real-world context should include:
 
-- Fairness audits across demographic and geographic subgroups
-- Bias assessments to flag disparate impact
-- Stakeholder review involving community representatives and legal experts
+Fairness audits across demographic and geographic subgroups
+
+Bias assessments to flag disparate impact
+
+Stakeholder review involving community representatives and legal experts
 
 Predictive models should support, not replace, human judgment in law enforcement contexts.
 
-## 📄 License
+📄 License
+
 This project is licensed under the MIT License.
